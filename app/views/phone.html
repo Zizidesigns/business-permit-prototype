@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What is your phone number? – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/document" method="post">
+
+      <div class="govuk-form-group">
+
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--xl" for="phone">
+            What is your phone number?
+          </label>
+        </h1>
+
+        <div id="phone-hint" class="govuk-hint">
+          Enter a phone number we can use to contact you.
+        </div>
+
+        <input class="govuk-input govuk-input--width-20"
+               id="phone"
+               name="phone"
+               type="tel"
+               autocomplete="tel">
+
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

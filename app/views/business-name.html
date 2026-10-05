@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {% if error %}
+    Error: What is the name of your business? – {{ serviceName }}
+  {% else %}
+    What is the name of your business? – {{ serviceName }}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if error %}
+
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Enter your business name",
+              href: "#business-name"
+            }
+          ]
+        }) }}
+
+      {% endif %}
+
+      <form method="post" action="/business-name">
+
+        {{ govukInput({
+          label: {
+            text: "What is the name of your business?",
+            classes: "govuk-label--xl",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Enter the name your business is registered or trading under."
+          },
+          id: "business-name",
+          name: "businessName",
+          autocomplete: "off",
+          errorMessage: "Enter your business name" if error
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

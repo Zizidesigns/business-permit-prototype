@@ -1,0 +1,9 @@
+{
+  "serviceName": "Apply for a Business Permit",
+  "useServiceNavigation": true,
+  "plugins": {
+    "govuk-frontend": {
+      "rebrand": true
+    }
+  }
+}

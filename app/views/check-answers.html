@@ -1,0 +1,126 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check your answers before sending your application
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: { text: "Business type" },
+            value: { text: "Restaurant" },
+            actions: {
+              items: [{
+                href: "/business-type",
+                text: "Change",
+                visuallyHiddenText: "business type"
+              }]
+            }
+          },
+          {
+            key: { text: "Business location" },
+            value: { text: "England" },
+            actions: {
+              items: [{
+                href: "/business-location",
+                text: "Change",
+                visuallyHiddenText: "business location"
+              }]
+            }
+          },
+          {
+            key: { text: "Business name" },
+            value: { text: "The Corner Kitchen" },
+            actions: {
+              items: [{
+                href: "/business-name",
+                text: "Change",
+                visuallyHiddenText: "business name"
+              }]
+            }
+          },
+          {
+            key: { text: "Business address" },
+            value: { text: "24 High Street, Manchester, M1 2AB" },
+            actions: {
+              items: [{
+                href: "/business-address",
+                text: "Change",
+                visuallyHiddenText: "business address"
+              }]
+            }
+          },
+          {
+            key: { text: "Full name" },
+            value: { text: "Alex Morgan" },
+            actions: {
+              items: [{
+                href: "/applicant-name",
+                text: "Change",
+                visuallyHiddenText: "full name"
+              }]
+            }
+          },
+          {
+            key: { text: "Email address" },
+            value: { text: "alex.morgan@example.com" },
+            actions: {
+              items: [{
+                href: "/email",
+                text: "Change",
+                visuallyHiddenText: "email address"
+              }]
+            }
+          },
+          {
+            key: { text: "Phone number" },
+            value: { text: "07123 456789" },
+            actions: {
+              items: [{
+                href: "/phone",
+                text: "Change",
+                visuallyHiddenText: "phone number"
+              }]
+            }
+          },
+          {
+            key: { text: "Supporting document" },
+            value: { text: "Business registration document" },
+            actions: {
+              items: [{
+                href: "/supporting-document",
+                text: "Change",
+                visuallyHiddenText: "supporting document"
+              }]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Now send your application
+      </h2>
+
+      <p>
+        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
+
+      <form action="/confirmation" method="post" novalidate>
+        {{ govukButton({
+          text: "Accept and send"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

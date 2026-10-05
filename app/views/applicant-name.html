@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    
+
+      <form class="form" action="/path/of/next/page" method="post">
+
+     {{ govukInput({
+  label: {
+    text: "What is your full name?",
+    classes: "govuk-label--xl",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Enter your first name and surname."
+  },
+  id: "full-name",
+  name: "fullName"
+}) }}
+
+{{ govukButton({
+  text: "Continue",
+  href: "/email"
+}) }}
+
+      
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

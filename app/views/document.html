@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Upload a document – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/check-answers" method="post" enctype="multipart/form-data">
+
+      <div class="govuk-form-group">
+
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--xl" for="document">
+            Upload a document
+          </label>
+        </h1>
+
+        <div id="document-hint" class="govuk-hint">
+          Upload a document that supports your application.
+        </div>
+
+        <input
+          class="govuk-file-upload"
+          id="document"
+          name="document"
+          type="file"
+        >
+
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

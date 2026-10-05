@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What type of business are you applying for? – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukRadios({
+        name: "businessType",
+        fieldset: {
+          legend: {
+            text: "What type of business are you applying for?",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+          }
+        },
+        items: [
+          {
+            value: "retail",
+            text: "Retail"
+          },
+          {
+            value: "food-hospitality",
+            text: "Food and hospitality"
+          },
+          {
+            value: "professional-services",
+            text: "Professional services"
+          },
+          {
+            value: "other",
+            text: "Other"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/business-location"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

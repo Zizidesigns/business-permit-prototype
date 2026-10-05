@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Where is your business located? – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukRadios({
+        name: "businessLocation",
+        fieldset: {
+          legend: {
+            text: "Where is your business located?",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+          }
+        },
+        items: [
+          {
+            value: "england",
+            text: "England"
+          },
+          {
+            value: "scotland",
+            text: "Scotland"
+          },
+          {
+            value: "wales",
+            text: "Wales"
+          },
+          {
+            value: "northern-ireland",
+            text: "Northern Ireland"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/business-name"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

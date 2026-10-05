@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Apply for a Business Permit – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+
+      <p>Use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>apply for a permit to operate your business</li>
+        <li>provide your business and contact details</li>
+        <li>upload supporting documents</li>
+        <li>review your application before submitting it</li>
+      </ul>
+
+      <p>
+        It takes around 10 minutes to complete this application.
+      </p>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "/business-type",
+        isStartButton: true
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Before you start
+      </h2>
+
+      <p>You will need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your business name and address</li>
+        <li>your contact details</li>
+        <li>information about the type of business you operate</li>
+        <li>any supporting documents required for your application</li>
+      </ul>
+
+      <p>
+        You will be able to check your answers before you submit your application.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

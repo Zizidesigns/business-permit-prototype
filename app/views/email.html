@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      
+      <form class="form" action="/path/of/next/page" method="post">
+
+        {{ govukInput({
+  label: {
+    text: "What is your email address?",
+    classes: "govuk-label--xl",
+    isPageHeading: true
+  },
+  hint: {
+    text: "We will use this email address to contact you about your application."
+  },
+  id: "email",
+  name: "email",
+  type: "email"
+}) }}
+
+{{ govukButton({
+  text: "Continue",
+  href: "/phone"
+}) }}
+
+      
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      
+
+      <form class="form" action="/path/of/next/page" method="post">
+
+       {{ govukFileUpload({
+  id: "supporting-document",
+  name: "supportingDocument",
+  label: {
+    text: "Upload a supporting document",
+    classes: "govuk-label--xl",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Upload a document that supports your business permit application, such as proof of business registration."
+  }
+}) }}
+
+{{ govukButton({
+  text: "Continue",
+  href: "/check-answers"
+}) }}
+
+       
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
